@@ -1,21 +1,23 @@
 use dirs;
-use git2::Repository;
 use std::env;
-use std::fs::create_dir;
+use std::fs::copy;
+use std::process;
 
 fn main() {
-    create_config_dir();
-    create_default_files();
+    if args().len() == 1 {
+        println!("Please write valid gitignore name");
+        process::exit(1);
+    }
+    let filename = &args()[1];
+    let _path: String = get_gignore_path();
+    match copy_gitignore(filename) {
+        Ok(_) => (),
+        Err(_) => println!("This gitignore does not exists"),
+    };
 }
 
-fn create_default_files() -> () {
-    let gitignore_url = "https://github.com/github/gitignore#versioned-templates";
-    Repository::clone(&gitignore_url, get_gignore_path());
-}
-
-fn create_config_dir() -> std::io::Result<()> {
-    create_dir(get_gignore_path())?;
-    Ok(())
+fn args() -> Vec<String> {
+    env::args().collect()
 }
 
 fn get_gignore_path() -> String {
@@ -30,6 +32,14 @@ fn get_config_dir() -> String {
         .unwrap()
 }
 
-struct FileData<'a> {
-    file_name: &'a String,
+fn copy_gitignore(gitignore_name: &String) -> std::io::Result<()> {
+    copy(
+        format!(
+            "{config_dir}/{gitignore_name}.gitignore",
+            gitignore_name = gitignore_name,
+            config_dir = get_gignore_path()
+        ),
+        format!(".gitignore"),
+    )?;
+    Ok(())
 }
