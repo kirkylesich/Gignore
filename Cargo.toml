@@ -6,9 +6,5 @@ edition = "2018"
 default-rn = "gignore"
 
 
-[build-dependencies]
-git2 = "0.13.6"
-dirs = "2.0.2"
-
 [dependencies]
 dirs = "2.0.2"

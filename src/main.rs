@@ -10,6 +10,7 @@ fn main() {
     }
     let filename = &args()[1];
     let _path: String = get_gignore_path();
+    println!("{}", _path);
     match copy_gitignore(filename) {
         Ok(_) => (),
         Err(_) => println!("This gitignore does not exists"),
