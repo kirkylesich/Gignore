@@ -1,7 +1,7 @@
 # Gignore
 Utility that can easily create gitignore files
 
-![Alt Text](https://media.giphy.com/media/J1v82ofOqYrCEW5ffc/source.gif)
+![Alt Text](https://media.giphy.com/media/jpVJ55XPh36xU4R1iv/source.gif)
 
 
 # How to install
