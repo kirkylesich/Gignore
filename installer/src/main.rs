@@ -29,10 +29,6 @@ fn get_gignore_path() -> String {
 }
 
 fn get_config_dir() -> String {
-    let home_dir = match env::home_dir() {
-        Some(path) => println!("Your home directory, probably: {}", path.display()),
-        None => println!("Impossible to get your home dir!"),
-    };
     dirs::config_dir()
         .unwrap()
         .into_os_string()
