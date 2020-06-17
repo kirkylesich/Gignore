@@ -1,5 +1,5 @@
 # Gignore
-Easy manage youe gitingore files!
+Easy managing your gitingore files!
 
 ![Gignore usage](https://media.giphy.com/media/h3zoZwm2hhLnNO87yn/giphy.gif)
 
