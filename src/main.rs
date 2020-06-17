@@ -2,7 +2,6 @@ use git2::Repository;
 use std::env::args;
 use std::env::var;
 use std::fs::remove_dir_all;
-use std::process;
 
 fn main() {
     let app = App {};
