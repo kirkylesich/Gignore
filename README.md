@@ -1,5 +1,6 @@
 # Gignore
 Easy manage youe gitingore files!
+
 ![Gignore usage](https://media.giphy.com/media/h3zoZwm2hhLnNO87yn/giphy.gif)
 
 # How to install
@@ -10,4 +11,5 @@ Easy manage youe gitingore files!
 
 # How to use
 - Type `gignore Filename` to save gitignore file into your directory.
+
 You can manage your gitignore files in `~/.config/gignore`
